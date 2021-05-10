@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap'); /* adding a font */ 
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+/* QjU22F6pWN84msU   :   font-awsome password */
+:root { /* defining the scope of the variable, root is the global scope */
+    --primary-color-nice-blue: #047aed; /* declaring variables, useful for often used values */ 
+    --border-input-color-light-gray: #b4becb;
+    --secondary-color-power-blue: rgb(28, 63, 168);
+    --peace-green: rgb(32, 180, 27);
+    --font-sec-color-p-blue: rgb(16, 39, 109);
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;  
+}
+
+.primary-font{
+    font-family: 'Lato', sans-serif;
+}
+
+.thicc-font{
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6; /* the height of the text area */
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1, h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p{
+    margin: 10px 0;
+}
+
+img{
+    width: 100%;
+   
+}
+
+/* Navbar */
+
+.navbar{
+    background-color: var(--primary-color-nice-blue);
+    color: #fff;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+    top: 0;
+    transition: box-shadow 0.1s ease-in;
+    /* box-shadow: 2px 0px 5px 0px rgba(0, 0, 0,0.25), -2px 0px 5px 0px rgba(0, 0, 0, 0.25); */
+}
+
+.navbar .flex {
+    justify-content:space-between; /* the utility class .flex will space between 
+    its items only if it's in the .navbar */
+}
+
+.navbar ul {
+    display: flex; /* the nav liste is also a flexbox, so that it's layed horizontally */
+    justify-content: space-between;
+}
+
+.navbar a[class="nonButtons"] {
+    color: #fff;
+    padding: 10px; 
+    margin: 0 5px;
+}
+
+.navbar a[class="nonButtons"]:hover {
+    border-bottom: 1px #fff solid; /* a line apears under the link when it's hovered over */
+}
+
+.navbar a.btn{
+    display: inline;
+    padding: 9px 16px;
+    padding-left: 37px;
+    position: relative;
+    margin-right: 13px;
+    border-radius: 25px;
+}
+
+.navbar a.btn i{
+    position: absolute;
+    left: 13px;
+    top: 10px;
+}
+
+/* Showcase */
+
+.showcase{    
+    height: 400px;
+    background-color: var(--primary-color-nice-blue) ;
+    color: #fff;
+    position: relative;
+    margin-top: 70px;
+}
+
+.showcase h1{ 
+    font-size: 40px;
+}
+
+.showcase p{ /* the h1 and p properties are overriden when inside the .showcase */
+    margin: 20px 0;
+}
+
+.showcase .grid{
+    overflow:visible;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    /* max-width: 400px; */
+    padding: 40px;
+    z-index: 90;
+    justify-self:flex-end;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type="text"] ,
+.showcase-form input[type="email"] {
+    border: 0;
+    border-bottom: 1px solid var(--border-input-color-light-gray);
+    width: 100%;
+    padding: 3px;   
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+    
+}
+
+.showcase::before,
+.showcase::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0px;
+    left:0;
+    background: #fff; 
+    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+    -moz-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
+}
+
+/* Stats */
+.stats {
+    padding-top: 100px;
+}
+
+.stats-heading {
+    max-width: 500px;
+    margin: auto;
+}
+
+.stats .grid h3 {
+    font-size: 35px;
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CLI */
+.cli .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child { /* selects any element that is the first child of .cli.grid */
+    grid-column: 1 / span 2;  /* spans the elements from col 1 to 2 */
+    grid-row: 1 / span 2; /* spans the elements from row 1 to 2 */
+
+}
+
+/* Cloud */
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+/* Languages */
+.languages .flex{
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    text-align: center;    
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    transform: translateY(-15px); /* it moves the card along the Y axis 10px upwards */
+    /* margin-top: 12px; */ 
+}
+
+/* Getting started */
+
+.getting-started{
+    margin-bottom: 0;
+}
+
+.image-world{
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    max-height: 414.867px;
+    max-width: 660.8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-world .card{
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    right: 10%;
+    width: auto;
+    padding: 10px 30px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+.image-world img{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.getting-started .btn{
+    border-radius:30px;
+    background-color: rgb(36, 204, 31);
+    color:#333;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+    transition: background-color 0.8s ease-in;
+    transition: box-shadow 0.3s ease-in;
+}
+
+.getting-started .btn{
+    transition: transform 0.2s ease-in, background-color 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+
+.getting-started .btn:hover{
+    box-shadow: 0px 0px 14px 2px rgba(0,0,0,0.3);
+    background-color: rgb(32, 180, 27);
+}
+
+/* Payment plans demo */
+.payment .head a.btn{
+    margin-top: 1rem;
+    scale:0.75;
+}
+.try{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.payment .card {
+    width: 300px;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 25px;
+    margin-top: 0px; 
+    border-radius: 5px;
+    height: max-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    color: var(--font-sec-color-p-blue);
+        /* padding: 20px; */
+}
+.payment .flexCards{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.payment .card1, .card3 {
+    box-shadow: 0px 1px 15px rgba(0,0,0,0.12);   
+    border: solid 1px gainsboro;
+    transform: scale(0.97,0.94);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.payment .card1{
+    margin-bottom: 30px;
+}
+.payment .card2 {
+    box-shadow: 0px 2px 17px rgba(0,0,0,0.17),2px 0px 17px rgba(0,0,0,0.17);   
+    border: solid 1px gainsboro;
+    position: relative;
+    /* transition: scale 0.2s ease-in-out; */
+}
+.payment .card2:hover{
+    scale:1.04;
+
+}
+.payment .card2::after{
+    content:'MOST POPULAR';
+    padding: 5px 0;
+    margin-top: 30px;
+    letter-spacing: 2px;
+    font-family: 'Kanit', sans-serif;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    height: auto;
+    width: 300px;
+    background-color:rgb(36, 204, 31);
+    position: absolute;
+    top: -47px;
+    left: 0px;
+}
+.payment .card1:hover, .card3:hover{
+    transform: scale(1,1);
+    box-shadow: 0px 1px 17px rgba(0,0,0,0.15),1px 0px 17px rgba(0,0,0,0.15);
+}
+
+.payment .h1,.h2,.h3 {
+    margin-top: 0px;
+}
+.payment .card div.text-center{
+    margin-top:23px;
+    margin-bottom: 3px;
+}
+
+.payment .card .redux{
+    font-size: 15px;
+    margin-right: 0px;
+    color: rgb(167, 167, 167);
+    font-weight:600;
+    text-decoration:line-through;
+}
+.payment .card .save{
+    border: #fff transparent 1px;
+    border-radius: 25px;
+    background-color: rgba(4, 122, 237,0.7);
+    font-weight: bold;
+    color: #fff;
+    padding: 4px 10px;
+    margin-left: 8px;
+    font-family: 'Kanit', sans-serif;
+}
+.payment .renew {
+    color: rgb(167, 167, 167);
+    font-weight: bold;
+    font-size: 14px;
+}
+.payment .card2 .price .save{
+    background-color:rgba(32, 180, 27, 0.7);
+}
+
+.payment .card .pricePer{
+    font-weight: bolder;
+    font-size: 60px;
+    position:relative;
+    margin: 0px 0 30px 0;
+}
+.payment .card .dollar{
+    position: absolute;
+    top:15px;
+    left:33px;
+}
+.payment .card2 .price .dollar{
+    position: absolute;
+    top:15px;
+    left:25px;
+}
+.payment .card3 .price .dollar{
+    position: absolute;
+    top:15px;
+    left:19px;
+}
+
+.payment .card .buy{
+    margin:20px 0 auto 0;
+    border: #fff transparent 1px;
+    border-radius: 30px;
+    padding: 8px 60px;
+    font-size: 20px;
+    transition: background-color 0.2s ease-in ;
+}
+.payment .card2 .price .buy{
+    transition: background-color 0.1s ease-in ;
+}
+
+.payment .card1 .price .buy:hover{
+    background-color:  rgb(38, 77, 194);
+}
+.payment .card3 .price .buy:hover{
+    background-color: rgb(38, 77, 194);
+}
+.payment .card2 .price .buy:hover{
+    background-color: rgb(36, 204, 31);
+}
+
+.payment .list{
+    text-align:left;
+    overflow: hidden;
+    height: 50px;
+    margin-bottom: 2px;
+    transition: height 0.4s ease-in;
+    position: relative;
+}
+.payment .list *{
+    margin-bottom: 1px;
+}
+.payment .list .front-grad{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255,0.1),#fff);
+    transition: background-image 2s ease-in;
+}
+.payment .list .bolde{
+    font-family: 'Kanit', sans-serif;
+}
+
+.payment .discover{
+    border-top:rgba(167, 167, 167,0.287) 1px solid;
+    padding: 10px auto;
+    margin: 4px auto 5px auto;
+    width: 230px;
+    z-index: 100;
+    justify-self: flex-end;
+    box-shadow: 0 -25px 25px 10px rgba(255, 255, 255, 0.7);
+    
+}
+.payment .discover button{
+    border:none;
+    color: var(--primary-color-nice-blue);
+    font-family:'Kanit', sans-serif;
+    font-size: medium;
+    background-color: transparent;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.payment .card2 .discover button{
+    color: var(--peace-green);
+}
+.payment .butt>*:nth-child(2){
+    display: none;
+}
+
+/* Footer*/
+.social a{
+    margin: 0 10px;
+}
+
+/* Page 2: Payment */
+
+/* intro: */
+.payment-body{
+    
+}
+
+.paymentintro{
+
+}
+
+/* Tablets and under */
+@media(max-width: 768px){
+
+}
+
+/* Mobile */
+@media(max-width: 500px) {
+    
+}

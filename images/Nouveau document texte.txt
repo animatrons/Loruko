@@ -1,0 +1,8 @@
+select nom, prenom,
+case
+when nbrCmd < 2 then 0
+when nbrCmd < 4 then 1000
+when nbrCmd <6 then 2000
+when nbrCmd >=6 then 4000
+end as prime
+from vendeur as v inner join Commande as c on v.matricule = c.matricule;
